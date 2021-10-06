@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -5,7 +6,7 @@ const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['mushrooms', 'peppers', 'onions', 'olives', 'extra cheese', 'tomatoes'];
 
   return (
-    <div className="toppings container">
+    <motion.div className="toppings container" initial={{x:'100vw'}} animate={{x:0}} transition={{type:'spring', delay:0.5}}>
       
       <h3>Step 2: Choose Toppings</h3>
       <ul>
@@ -20,12 +21,16 @@ const Toppings = ({ addTopping, pizza }) => {
       </ul>
 
       <Link to="/order">
-        <button>
+      <motion.button whileHover={{scale:1.1,
+        
+        textShadow:"0px 0px 8px rgb(255,255,255)",
+        boxShadow:"0px 0px 8px rgb(255,255,255)"
+        }}>
           Order
-        </button>
+        </motion.button>
       </Link>
 
-    </div>
+    </motion.div>
   )
 }
 
