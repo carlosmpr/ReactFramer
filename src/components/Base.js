@@ -53,7 +53,7 @@ const Base = ({ addBase, pizza }) => {
       </ul>
 
       {pizza.base && (
-        <motion.div className="next"  variants={nextVariants} initial="hidden" animate="visible">
+        <motion.div className="next"  variants={nextVariants} >
           <Link to="/toppings">
           <motion.button whileHover={{scale:1.1,
         
